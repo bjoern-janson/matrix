@@ -84,7 +84,7 @@ For a fixed system state `G` and budget `B`, define the jointly correctable fron
 \left\{
 S\subseteq\Omega:
 \exists\pi,
-\operatorname{cost}(\pi)\le B,
+\mathrm{cost}(\pi)\le B,
 \ \forall x\in S,
 \ \pi\text{ diagnoses and validly repairs }x
 \right\}.
@@ -103,7 +103,7 @@ but whether **one executable policy**, starting from uncertainty over the whole 
 Its minimal excluded sets therefore form a minimal-obstruction hypergraph
 
 ```math
-H_B(G)=\operatorname{Min}\left(2^\Omega\setminus\Phi_B(G)\right).
+H_B(G)=\mathrm{Min}\left(2^\Omega\setminus\Phi_B(G)\right).
 ```
 
 These are the smallest uncertainty configurations for which bounded correction fails.
@@ -116,9 +116,9 @@ A representation is corrigibly adequate at budget `B` exactly when every ambigui
 
 ```math
 \boxed{
-\operatorname{Safe}_B(g\mid G)
+\mathrm{Safe}_B(g\mid G)
 \iff
-\forall m\in\operatorname{im}(g),
+\forall m\in\mathrm{im}(g),
 \quad
 g^{-1}(m)\in\Phi_B(G)
 }
@@ -152,7 +152,7 @@ For uncertainty set `S`, define graded bounded performance separately:
 ```math
 P_B^*(S\mid G)
 =
-\sup_{\pi:\operatorname{cost}(\pi)\le B}
+\sup_{\pi:\mathrm{cost}(\pi)\le B}
 P(\text{successful correction}\mid S,\pi,G).
 ```
 
@@ -164,7 +164,7 @@ C_B(S\mid G)
 \left(
 \mathbf 1[S\in\Phi_B(G)],
 P_B^*(S\mid G),
-\operatorname{cost}^*(S\mid G)
+\mathrm{cost}^*(S\mid G)
 \right).
 ```
 
