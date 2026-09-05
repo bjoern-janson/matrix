@@ -1,0 +1,12 @@
+{
+  "schema": "a2-v0-development-checks/1",
+  "unresolved_units_executed": 0,
+  "observed_steps": [
+    {"step":"core RED before implementation","command":"python3 -m unittest discover -s tests -p test_core.py -v","exit_code":1,"failures":9,"cause":"finite model missing"},
+    {"step":"core GREEN after implementation","command":"python3 -m unittest discover -s tests -p test_core.py -v","exit_code":0,"tests_passed":9},
+    {"step":"runner RED before implementation","command":"python3 -m unittest discover -s tests -p test_runner.py -v","exit_code":1,"failures":8,"cause":"control-first runner missing"},
+    {"step":"runner GREEN after implementation","command":"python3 -m unittest discover -s tests -p test_runner.py -v","exit_code":0,"tests_passed":8},
+    {"step":"integrated suite","command":"python3 -m unittest discover -s tests -v","exit_code":0,"tests_passed":17}
+  ],
+  "gate_fault_tests":["injected control mismatch stops before invariants and unresolved training","injected invariant failure stops before unresolved training"]
+}

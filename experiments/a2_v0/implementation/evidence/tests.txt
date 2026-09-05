@@ -1,0 +1,22 @@
+test_actual_execution_charges_realization_and_repairs (test_core.CoreTests.test_actual_execution_charges_realization_and_repairs) ... ok
+test_channel_coordinate_order_and_inverse (test_core.CoreTests.test_channel_coordinate_order_and_inverse) ... ok
+test_clones_and_frozen_constructor_do_not_leak_learning_state (test_core.CoreTests.test_clones_and_frozen_constructor_do_not_leak_learning_state) ... ok
+test_constructor_realizes_only_one_diagnostic_policy (test_core.CoreTests.test_constructor_realizes_only_one_diagnostic_policy) ... ok
+test_feedback_updates_and_fixed_work (test_core.CoreTests.test_feedback_updates_and_fixed_work) ... ok
+test_frontiers_are_enumerated_with_reusable_policy_witnesses (test_core.CoreTests.test_frontiers_are_enumerated_with_reusable_policy_witnesses) ... ok
+test_independent_oracle_and_downward_closure (test_core.CoreTests.test_independent_oracle_and_downward_closure) ... ok
+test_invalid_feedback_is_processed_but_cannot_learn (test_core.CoreTests.test_invalid_feedback_is_processed_but_cannot_learn) ... ok
+test_weighted_utility_is_exact_and_uses_default_policy (test_core.CoreTests.test_weighted_utility_is_exact_and_uses_default_policy) ... ok
+test_01_all_theorem_signatures_before_remaining_invariants (test_runner.RunnerTests.test_01_all_theorem_signatures_before_remaining_invariants) ... ok
+test_02_control_mismatch_stops_before_invariants_and_unresolved_training (test_runner.RunnerTests.test_02_control_mismatch_stops_before_invariants_and_unresolved_training) ... ok
+test_03_invariant_failure_stops_before_unresolved_training (test_runner.RunnerTests.test_03_invariant_failure_stops_before_unresolved_training) ... ok
+test_04_output_seals_cannot_overwrite_existing_results (test_runner.RunnerTests.test_04_output_seals_cannot_overwrite_existing_results) ... ok
+test_05_secondary_output_requires_sealed_primary (test_runner.RunnerTests.test_05_secondary_output_requires_sealed_primary) ... ok
+test_06_secondary_output_rejects_changed_primary (test_runner.RunnerTests.test_06_secondary_output_rejects_changed_primary) ... ok
+test_07_paired_training_has_matched_work_and_frozen_evaluation (test_runner.RunnerTests.test_07_paired_training_has_matched_work_and_frozen_evaluation) ... ok
+test_08_cli_defaults_to_controls_and_validation_only (test_runner.RunnerTests.test_08_cli_defaults_to_controls_and_validation_only) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 1.237s
+
+OK

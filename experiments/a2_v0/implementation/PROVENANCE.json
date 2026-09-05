@@ -1,0 +1,35 @@
+{
+  "accepted_amendments": [
+    "64 controls: 56 expansion and 8 null",
+    "320 units outside the proved control family",
+    "no residual existence null",
+    "weights 2**i / 255, structurally coupled utility",
+    "transplant is a contract check",
+    "no repository writes this turn"
+  ],
+  "authority": "user-frozen conversation contract, 2026-09-05",
+  "delivery_scope": "implementation and validation only; unresolved execution not performed",
+  "inputs": [
+    {
+      "library_file_id": "libfile_1e19b71ab3d88191afba5e99ff28ee38",
+      "sha256": "0cffdd1010e91d74b89f2c132e904466bb1fe2ff3a7d54ec920081ec4cee7169",
+      "uploaded_name": "Pasted markdown(20260905-190111).md"
+    },
+    {
+      "library_file_id": "libfile_d67a0597a47881918406ff92cce37023",
+      "sha256": "16830ecb1022587982721f9d3368680f901e2210065b02fb40ac3bba0af341da",
+      "uploaded_name": "Pasted markdown(20260905-191438).md"
+    }
+  ],
+  "repository_reference": {
+    "name": "bjoern-janson/matrix",
+    "sha": "b006a581161be65ea34df39ba9558facddac386b"
+  },
+  "schema": "a2-v0-provenance/1",
+  "training_cost_convention": {
+    "charge_per_processing_batch": 1,
+    "hypothesis_checks_per_episode": 48,
+    "primitive_actions_per_episode": 4,
+    "training_charge_per_arm": 40
+  }
+}

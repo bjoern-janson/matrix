@@ -1,0 +1,14 @@
+{
+  "schema":"a2-v0-call-audit-summary/1",
+  "source_digest":"dd454df0cf646b44a11f91bc965ab5a40de1e62c860dacdf0e988d32205dc02d",
+  "observer":"sys.setprofile outside learner and constructor",
+  "status":"PASS",
+  "observed_pair_calls":64,
+  "observed_arm_calls":128,
+  "pair_hypothesis_indices":[0,1,2,3,4,5,6,7],
+  "rotations_per_hypothesis":8,
+  "unresolved_pair_calls":0,
+  "unresolved_arm_calls":0,
+  "full_audit_sha256":"11c0a8308199da7e64cea8d8e5318a7354aaf83f84dfd2458cde8852fe2a0934",
+  "validation_report_sha256":"b3b3589e76b9ae58ddedf4401aba6d6958f1e3ef9566b36f69a66b5d05e0c112"
+}

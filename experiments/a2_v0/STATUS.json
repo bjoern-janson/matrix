@@ -1,0 +1,65 @@
+{
+  "schema": "matrix-a2-v0-status/1",
+  "program": "MATRIX0",
+  "attack_1": "CLOSED",
+  "attack_2_identification": "CLOSED",
+  "preregistration": "FROZEN",
+  "implementation": {
+    "status": "VALIDATED",
+    "source_digest": "dd454df0cf646b44a11f91bc965ab5a40de1e62c860dacdf0e988d32205dc02d",
+    "tests": {"passed": 17, "total": 17},
+    "theorem_controls": {"matched": 64, "total": 64},
+    "invariant_checks": {"passed": 19, "total": 19},
+    "training_processing_batch_charge": 1,
+    "training_charge_per_arm": 40
+  },
+  "scientific_execution": {
+    "status": "COMPLETE",
+    "unresolved_units_executed": 320,
+    "unresolved_total": 320,
+    "primary_counts": {
+      "EXPANSION": 254,
+      "NULL": 32,
+      "CONTRACTION": 18,
+      "TRADEOFF": 16
+    },
+    "changed_frontier_units": 288,
+    "delta_plus_nonempty": 270,
+    "delta_minus_nonempty": 34,
+    "transplant_contract_checks": {"passed": 288, "total": 288},
+    "treatment_exact_true_hypothesis": 202,
+    "expansion_without_exact_true_hypothesis": 52,
+    "weighted_deployment": {
+      "positive": 264,
+      "zero": 32,
+      "negative": 24,
+      "mean_numerator": 241,
+      "mean_denominator": 400
+    }
+  },
+  "theorem_derived_controls": {
+    "expansion": 56,
+    "null": 8
+  },
+  "full_384_bookkeeping": {
+    "EXPANSION": 310,
+    "NULL": 40,
+    "CONTRACTION": 18,
+    "TRADEOFF": 16
+  },
+  "result_hashes": {
+    "primary.json": "3ee83c7c50b9085cd990c09f57cb8ab784abe854e020c48a3137706fcf90e117",
+    "trajectories.json": "aad6a6782c55f74537d274f78e53668daafddc6834a929ca4efde8018c0795b7",
+    "transplants.json": "5529b9e29e42221db4f20e35685d2569c21af237e4959341106f45f1fb1e711c",
+    "utilities.json": "5a054c1348080d78d48b7e529bb06dd1a25f5016d16bd17f998ace3189825ea0",
+    "report.json": "25792670a091adf14f980f47d4156c6855d7a4e3d65c33eb9802f4805c2dac4e"
+  },
+  "artifacts": {
+    "implementation_zip_sha256": "76b939f8a1724f14e057096cb2bfffa11e8454d59e4addd9a7bf05475837be6e",
+    "scientific_run_zip_sha256": "cb9e444d1264b68013ead4c895fc5717b70bd310d6523cd6f091460c748021ff"
+  },
+  "repository_parent_before_record": "b006a581161be65ea34df39ba9558facddac386b",
+  "kernel_revision": "NONE",
+  "readme_revision": "NONE",
+  "claim_ceiling": "Finite A2-V0 assay only; no general self-improvement, general corrigibility, universal monotonicity, unique mediator, population extrapolation, or MATRIX1 claim."
+}
