@@ -1,0 +1,24 @@
+{'schema': 'a2-v1-receipt/2', 'mode': 'prospective', 'status': 'COMPLETE', 'source_digest': 'ea204bad2519f6759f6e5ef1dadd405b7043fe8277e6b5ebbfa3cace09c1c31c', 'reference_seals': mappingproxy({'contract': '8ae73dd492f9c762546554ed5dc20f18c9a1220c955f3efa7f384cccf07a6b22', 'priority': 'a11c989c0a72d4d0363077ce353fd5642f708933adedee475ca2c1678497bb2c', 'theorem': 'aa274d3038c9a6633a35a3ef66395773bb27413e8768f0956b878667941deaf5', 'historical': '0c59eb2324c244af83ebb8be86fdb496897a81566a9d3896e61fc2f26d84aeca', 'model': '6ab7a3a27d7be6aed5f7743f6b302e1264c958eef8f1c45b367562613f850eef', 'protocol': '25cbe801494101c18a75bb64300b7bd54b7c47a5ed74dc6a0d206a757ea7c243'}), 'counters': {'THEOREM_CONTROL': 1536, 'HISTORICAL_P0': 320, 'COVARIANCE_P3': 320, 'PROSPECTIVE_TARGET': 7040}, 'entered': {'THEOREM_CONTROL': 1536, 'HISTORICAL_P0': 320, 'COVARIANCE_P3': 320, 'PROSPECTIVE_TARGET': 7040}, 'stages': ['PREPARATION_SEALED', 'THEOREM_CONTROL_MATCHED', 'HISTORICAL_P0_MATCHED', 'COVARIANCE_P3_MATCHED', 'REMAINING_INVARIANTS_PASSED', 'PROSPECTIVE_TARGET_COMPLETE', 'FINAL_INVARIANTS_AND_SEALS'], 'artifacts': {'source_manifest.json': 'ea204bad2519f6759f6e5ef1dadd405b7043fe8277e6b5ebbfa3cace09c1c31c', 'unit_manifest.json': '33372d26cce332daa4b997b1106955ee000605025cf412503dcfa29a362537a3', 'expected_references.json': '31e187d876fa1aa2952fb78e6e6e93399b784bdfbc460b09d3d0b3f7a9a37194', 'preparation.json': '0b047d5e8fac7299e6b04a4497ccfb394cd7137f52dd9d2ec5fd67944dc50873', 'validation/evidence.json': 'a17e509feeeac0f61499acfe81d50be149f183c05739879be6d77bd56a18a117', 'validation/receipt.json': 'cfb9e62c8c69477d5ac4717cdb7e2dfa6013078d14a544e8e63262ce4b110be7', 'evidence.json': '6e3188b33a2640133cbdd4b9d91b48513cbd2dfc80c96c21efb561932961c1d1', 'primary.json': 'f1b0f55c0860e9847f69ef4a741f477a66dd5cc7f8d9ed4af35484066e223076', 'derived.json': '7b298eef81996ab804c09c5a4d8756d7fbd8842843bcef7a30b9de160f64e10b'}, 'fresh_validation_sha256': 'cfb9e62c8c69477d5ac4717cdb7e2dfa6013078d14a544e8e63262ce4b110be7', 'evidence_sha256': '6e3188b33a2640133cbdd4b9d91b48513cbd2dfc80c96c21efb561932961c1d1', 'primary_sha256': 'f1b0f55c0860e9847f69ef4a741f477a66dd5cc7f8d9ed4af35484066e223076', 'derived_sha256': '7b298eef81996ab804c09c5a4d8756d7fbd8842843bcef7a30b9de160f64e10b', 'python': '3.12.13', 'scientific_interpretation': 'ADMITTED'}
+	Command being timed: "env PYTHONPATH=. python3 -m a2_v1 run-prospective --output /home/runner/work/matrix/matrix/a2-v1-prospective-output"
+	User time (seconds): 208.63
+	System time (seconds): 3.99
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:32.69
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 7818540
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1
+	Minor (reclaiming a frame) page faults: 1879374
+	Voluntary context switches: 9
+	Involuntary context switches: 1515
+	Swaps: 0
+	File system inputs: 96
+	File system outputs: 1444616
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

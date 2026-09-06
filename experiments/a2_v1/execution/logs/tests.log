@@ -1,0 +1,35 @@
+test_actual_engine_partial_record_on_evaluation_fault (test_review_regressions.ControllerRegressions.test_actual_engine_partial_record_on_evaluation_fault) ... ok
+test_coverage_exact_and_full_map_baseline (test_review_regressions.ControllerRegressions.test_coverage_exact_and_full_map_baseline) ... ok
+test_derived_effect_witness_and_both_encounter_loss_structures (test_review_regressions.ControllerRegressions.test_derived_effect_witness_and_both_encounter_loss_structures) ... ok
+test_fresh_science_gate_order_and_stops_at_synthetic_target_boundary (test_review_regressions.ControllerRegressions.test_fresh_science_gate_order_and_stops_at_synthetic_target_boundary) ... ok
+test_partial_training_and_constructor_context_survives_fault (test_review_regressions.ControllerRegressions.test_partial_training_and_constructor_context_survives_fault) ... ok
+test_primary_is_lexicographic (test_review_regressions.ControllerRegressions.test_primary_is_lexicographic) ... ok
+test_production_reference_matching_each_phase_with_real_checked_failure_cell (test_review_regressions.ControllerRegressions.test_production_reference_matching_each_phase_with_real_checked_failure_cell) ... ok
+test_seal_change_after_gate_prevents_target_entry (test_review_regressions.ControllerRegressions.test_seal_change_after_gate_prevents_target_entry) ... ok
+test_seal_reverification_rejects_changes (test_review_regressions.ControllerRegressions.test_seal_reverification_rejects_changes) ... ok
+test_source_change_blocks_validation_pass_and_target_entry (test_review_regressions.ControllerRegressions.test_source_change_blocks_validation_pass_and_target_entry) ... ok
+test_disconnected_or_falsified_trajectory_rejected (test_review_regressions.ReviewRegressions.test_disconnected_or_falsified_trajectory_rejected) ... ok
+test_execution_and_complete_witness_linkage (test_review_regressions.ReviewRegressions.test_execution_and_complete_witness_linkage) ... ok
+test_nested_authorities_immutable_and_protocol_pinned (test_review_regressions.ReviewRegressions.test_nested_authorities_immutable_and_protocol_pinned) ... ok
+test_partial_execution_retained (test_review_regressions.ReviewRegressions.test_partial_execution_retained) ... ok
+test_preparation_failure_has_invalid_receipt (test_review_regressions.ReviewRegressions.test_preparation_failure_has_invalid_receipt) ... ok
+test_seals_precede_first_pair_and_failure_retains_record (test_review_regressions.ReviewRegressions.test_seals_precede_first_pair_and_failure_retains_record) ... ok
+test_transplants_are_actual_executions (test_review_regressions.ReviewRegressions.test_transplants_are_actual_executions) ... ok
+test_corruption_stops_loading (test_v1.AuthoritiesTests.test_corruption_stops_loading) ... ok
+test_p3_is_independently_compiled (test_v1.AuthoritiesTests.test_p3_is_independently_compiled) ... ok
+test_pinned_authorities_and_historical_seal (test_v1.AuthoritiesTests.test_pinned_authorities_and_historical_seal) ... ok
+test_exact_set_sensitivity_and_distinct_loss_notions (test_v1.DerivedTests.test_exact_set_sensitivity_and_distinct_loss_notions) ... ok
+test_informative_update_retains_truth (test_v1.EngineTests.test_informative_update_retains_truth) ... ok
+test_invalid_feedback_preserves_live_but_charges_scan (test_v1.EngineTests.test_invalid_feedback_preserves_live_but_charges_scan) ... ok
+test_mutations_are_detected (test_v1.EngineTests.test_mutations_are_detected) ... ok
+test_priority_selection_is_not_numeric_min (test_v1.EngineTests.test_priority_selection_is_not_numeric_min) ... ok
+test_reference_smoke_and_invariants (test_v1.EngineTests.test_reference_smoke_and_invariants) ... ok
+test_each_gate_mismatch_stops_before_targets (test_v1.RunnerTests.test_each_gate_mismatch_stops_before_targets) ... ok
+test_invariant_mismatch_stops_before_targets (test_v1.RunnerTests.test_invariant_mismatch_stops_before_targets) ... ok
+test_science_repeats_fresh_gate_and_stored_pass_cannot_bypass (test_v1.RunnerTests.test_science_repeats_fresh_gate_and_stored_pass_cannot_bypass) ... ok
+test_validation_never_calls_target_and_is_immutable (test_v1.RunnerTests.test_validation_never_calls_target_and_is_immutable) ... ok
+
+----------------------------------------------------------------------
+Ran 30 tests in 25.040s
+
+OK
