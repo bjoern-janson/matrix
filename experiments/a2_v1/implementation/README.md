@@ -1,5 +1,19 @@
 # A2-V1 frozen assay software
 
+**Current standing: implementation reviewed; validation-only gate PASS; prospective science NOT RUN.**
+
+The controller reproduced all 1,536 theorem signatures, 320 historical P0 endpoints, and 320 covariance P3 endpoints. An external paired-call observer independently matched all 2,176 endpoints and blocked nonreference execution. All 30 software tests passed. Exactly zero prospective pairs were executed. See [STATUS.json](STATUS.json), [validation receipt](evidence/validation_receipt.json), and [custody manifest](evidence/CUSTODY.json).
+
+The complete raw validation attempt is retained in [validation_run.zip](evidence/validation_run.zip), including pre-execution seals, all trajectories, policy executions, subset witnesses, transplant measurements, and invariant checks. [Initial review](evidence/INITIAL_REVIEW.md), [correction report](evidence/IMPLEMENTATION_REPORT.md), and [final static review](evidence/FINAL_REVIEW.md) preserve the review history. The older parent status files describe the immutable preregistration snapshot. This implementation record adds the later validation state.
+
+To reproduce the independently guarded validation, extract [independent_references.zip](evidence/independent_references.zip) into a temporary directory and run from this implementation directory:
+
+```sh
+python3 evidence/controller_audit.py validate --implementation . --reference /ABSOLUTE/TEMP/independent_reference_endpoints.json --audit /ABSOLUTE/NEW/call_audit.json --output /ABSOLUTE/NEW/validation
+```
+
+The output directory must not already exist. This command executes only the reference gate. These reference reproductions are software validation, not prospective discoveries. The authorized terminal state is validation-only completion.
+
 This standard-library package implements `A2-PREREG-V1`. It pins and hashes the frozen model, contract, priority audit, theorem predictions, and historical compact primary before paired execution. Priority selection uses original hypothesis IDs ranked by the frozen 24 conjugated orders. Each paired cell is executed by `a2_v1.engine.execute_paired_cell(unit, authorities)`; its explicit `(h, P, k)` unit argument permits independent call profiling.
 
 From this directory, run focused software tests with:
