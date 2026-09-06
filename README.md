@@ -1,6 +1,22 @@
 # MATRIX
 
-**Status:** conceptual kernel frozen; formalization, translation, and causal testing remain open.
+**Status:** `MATRIX_0` kernel frozen; Attack 1 closed / assumption-scoped; A2-V0 complete; A2-V1 complete / scientific interpretation admitted; `MATRIX_1` not earned.
+
+## Current program state
+
+The conceptual kernel below remains frozen. The repository has since completed its first formal attack and two finite causal assays without earning a kernel promotion:
+
+| Stage | Current standing |
+|---|---|
+| `MATRIX_0` conceptual kernel | **FROZEN** |
+| Attack 1 / `EXEC_V1` | **CLOSED / ASSUMPTION-SCOPED** |
+| A2-V0 | **COMPLETE**; post-execution structural analysis archived |
+| A2-V1 | **COMPLETE / SCIENTIFIC INTERPRETATION ADMITTED** |
+| `MATRIX_1` | **NOT EARNED** |
+
+Current navigation: [`formalization/EXEC_V1.md`](formalization/EXEC_V1.md), [`experiments/a2_v0/README.md`](experiments/a2_v0/README.md), [`experiments/a2_v1/README.md`](experiments/a2_v1/README.md), [`experiments/a2_v1/CURRENT_STATE.md`](experiments/a2_v1/CURRENT_STATE.md), and [`experiments/A2_V1_RESULT.md`](experiments/A2_V1_RESULT.md).
+
+This status block is navigational. It does not amend the frozen kernel, retroactively rewrite preregistrations, or promote post-execution findings into stronger claims.
 
 MATRIX studies a narrow question:
 

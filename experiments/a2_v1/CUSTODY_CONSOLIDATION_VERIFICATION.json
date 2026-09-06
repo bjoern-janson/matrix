@@ -1,0 +1,15 @@
+{
+  "schema": "matrix-custody-consolidation-verification/1",
+  "base_commit": "52023fe84c5c706c0b8b7c18d61936ec99070b65",
+  "workflow_input_commit": "948c00ca73c13f41f611afb9fea67d91f9535a3b",
+  "software_tests_passed": 30,
+  "restored_validation_hashes": "PASS",
+  "scientific_archive_hashes": "PASS",
+  "canonical_primary_sha256": "f1b0f55c0860e9847f69ef4a741f477a66dd5cc7f8d9ed4af35484066e223076",
+  "derived_sha256": "7b298eef81996ab804c09c5a4d8756d7fbd8842843bcef7a30b9de160f64e10b",
+  "sealed_output_tarball_sha256": "d1f7605ac4246cd872984a1a3efaead468a9cea242d5fd88642969af1344bfa7",
+  "protected_scientific_paths_unchanged": true,
+  "scientific_rerun_performed": false,
+  "scientific_interpretation_changed": false,
+  "status": "PASS"
+}

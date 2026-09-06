@@ -120,3 +120,17 @@ The earlier local 4-GiB OOM attempt is not a scientific result and is not combin
 ## Raw evidence storage note
 
 The exact full raw evidence is 583,344,614 bytes uncompressed and is hash-bound above. The complete scientific output remains in the sealed GitHub Actions artifact identified above; this repository record preserves the admitted result, exact artifact identities, source binding, decision boundary, and claim ceiling. No regenerated or substituted scientific output is used here.
+
+## Repository-resident archival addendum
+
+This addendum records a **custody-only consolidation performed after the admitted result**. It does not alter the preregistration, execution, reported values, interpretation, or claim ceiling above.
+
+The successful Actions artifact was originally retention-limited. Exact admitted execution bytes are now durably repository-resident under [`a2_v1/execution/`](a2_v1/execution/):
+
+- [`a2_v1/execution/artifacts/a2-v1-prospective-output.tar.gz`](a2_v1/execution/artifacts/a2-v1-prospective-output.tar.gz) is the exact sealed output tarball, SHA-256 `d1f7605ac4246cd872984a1a3efaead468a9cea242d5fd88642969af1344bfa7`;
+- [`a2_v1/result/primary.json.gz`](a2_v1/result/primary.json.gz) is deterministic compression of the exact 9,216-row primary map; decompression yields canonical SHA-256 `f1b0f55c0860e9847f69ef4a741f477a66dd5cc7f8d9ed4af35484066e223076`;
+- [`a2_v1/result/derived.json`](a2_v1/result/derived.json) preserves the exact preregistered membership/witness structures, SHA-256 `7b298eef81996ab804c09c5a4d8756d7fbd8842843bcef7a30b9de160f64e10b`;
+- [`a2_v1/execution/GITHUB_ACTIONS_WORKFLOW.yml`](a2_v1/execution/GITHUB_ACTIONS_WORKFLOW.yml) is an inert copy of the exact successful science workflow;
+- [`a2_v1/EXECUTION_CUSTODY.md`](a2_v1/EXECUTION_CUSTODY.md) records complete recovery/provenance details.
+
+The original Actions artifact remains provenance, but it is no longer required for scientific-output availability. Historical validation-only records remain historical and are not rewritten into post-execution standing.
