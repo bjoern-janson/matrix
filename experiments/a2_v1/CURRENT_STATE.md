@@ -62,8 +62,12 @@ Their `NOT_RUN` / zero-prospective language is historically correct for those st
 
 A2-V1 closes the specific A2-V0 seam it preregistered: separation of cyclic encounter-order effects from active-survivor-priority effects within the tested family, including their interaction.
 
-A post-A2-V1 candidate mathematical substrate is recorded at [`../../formalization/GL_FIXED_SPACE_SEPARATION_V0.md`](../../formalization/GL_FIXED_SPACE_SEPARATION_V0.md). Its standing is deliberately split: the finite `GL(d,2)` separation theorem is **EARNED**, while the executable MATRIX translation from fixed-space geometry to a system-relative corrective-frontier difference is **UNEARNED**.
+The mathematical substrate is recorded at [`../../formalization/GL_FIXED_SPACE_SEPARATION_V0.md`](../../formalization/GL_FIXED_SPACE_SEPARATION_V0.md). That record retains its historical theorem-earned / translation-unearned standing.
 
-**No next assay is frozen by this record.** The next concrete missing argument must be chosen explicitly before any new experiment is designed. The GL record does not authorize an affine assay or any other follow-up. This document does not invent a new concept, silently promote MATRIX, or manufacture a follow-up merely to keep the program moving.
+The subsequent [`../../formalization/GL_MATRIX_TRANSLATION_V0.md`](../../formalization/GL_MATRIX_TRANSLATION_V0.md) closes its finite executable translation obligation: an explicit nine-policy system has incomparable corrective frontiers despite maximal domain-restricted operator/trace agreement. It separately proves frontier washout under common inverse-decoder enrichment, refuting the policy-independent implication from fixed-space inequality to frontier inequality.
+
+The construction explicitly assigns zero realization cost and uses a one-shot vector query; its resource contract differs from A2's coordinate queries. It establishes no temporal/learning result, informed inverse-selection procedure, human-control result, or general corrigibility claim. These are derived semantic results, not additional A2-V1 observations or empirical validation of MATRIX_0.
+
+**No next assay is frozen by this record.** The next concrete missing argument must be chosen explicitly before any new experiment is designed. Neither GL record authorizes an affine assay or any other follow-up.
 
 `MATRIX_1` remains **NOT EARNED**.
