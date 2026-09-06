@@ -1,0 +1,71 @@
+name: MATRIX custody post-clean verification
+
+on:
+  push:
+    branches:
+      - chore/matrix-documentation-custody-consolidation
+    paths:
+      - .github/workflows/matrix-custody-postclean-verify.yml
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: chore/matrix-documentation-custody-consolidation
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.13'
+
+      - name: Run frozen implementation tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd experiments/a2_v1/implementation
+          PYTHONPATH=. python3 -m unittest discover -s tests -v 2>&1 | tee /tmp/a2-v1-tests.log
+          grep -q 'Ran 30 tests' /tmp/a2-v1-tests.log
+          grep -q '^OK$' /tmp/a2-v1-tests.log
+
+      - name: Verify custody hashes and exact primary
+        shell: bash
+        run: |
+          set -euo pipefail
+          sha256sum -c <<'EOF'
+          9594e0107de2053fbcc971b16a806422f7a130dd6445e21717151fb72a07eb2e  experiments/a2_v1/implementation/evidence/FINAL_REVIEW.md
+          a23d50d669022243d7809b838d3aa909b66739ebf9e07e4d9428bc7162132c20  experiments/a2_v1/implementation/evidence/IMPLEMENTATION_REPORT.md
+          689ce1169fcadc5e0ebf19b9f2cf6f0de1c3315acd0d473aed3ed7abdb0f7475  experiments/a2_v1/implementation/evidence/INITIAL_REVIEW.md
+          d6af584726ecb5ff08411573b97186a45b3843d78010eb6f2ae5f1a2be309557  experiments/a2_v1/implementation/evidence/controller_audit.py
+          adb32579d31ce3d21146117df1d2e6582e1cabd6ae44ace722404af263e54d40  experiments/a2_v1/implementation/evidence/independent_references.zip
+          dbefec748d7ea01a1e3e81090e0230ebe8ee3a964b069a91b7212f46f8d1e5c0  experiments/a2_v1/implementation/evidence/software_test_audit.json
+          4aeb621b0375225dded426ce2fab58242ef9e29dc6b1b362fe3d8932eefec351  experiments/a2_v1/implementation/evidence/validation_call_audit.json
+          ad0996b8fc0f01de502acd963626a35053516b3a3b95d4a2f98937109af51a8e  experiments/a2_v1/implementation/evidence/validation_receipt.json
+          b397aba50af26e03946d18492c3580cc5acf5554fec347c3b22f72a907afc643  experiments/a2_v1/implementation/evidence/validation_run.zip
+          d1f7605ac4246cd872984a1a3efaead468a9cea242d5fd88642969af1344bfa7  experiments/a2_v1/execution/artifacts/a2-v1-prospective-output.tar.gz
+          a317bf081407694cefe2e84b97bfdbd845eef1077a7b92c6328785b565c6e8b3  experiments/a2_v1/result/primary.json.gz
+          7b298eef81996ab804c09c5a4d8756d7fbd8842843bcef7a30b9de160f64e10b  experiments/a2_v1/result/derived.json
+          EOF
+          test "$(gzip -dc experiments/a2_v1/result/primary.json.gz | sha256sum | awk '{print $1}')" = 'f1b0f55c0860e9847f69ef4a741f477a66dd5cc7f8d9ed4af35484066e223076'
+          test "$(git hash-object experiments/a2_v1/execution/GITHUB_ACTIONS_WORKFLOW.yml)" = '3c2527866e76f1fc251e4f56a0ff5e8c54994981'
+
+      - name: Verify documentation standing and protected source boundaries
+        shell: bash
+        run: |
+          set -euo pipefail
+          grep -q 'A2-V1 complete / scientific interpretation admitted' README.md
+          grep -q 'COMPLETE / SCIENTIFIC INTERPRETATION ADMITTED' experiments/a2_v1/README.md
+          grep -q 'Repository-resident archival addendum' experiments/A2_V1_RESULT.md
+          grep -q '"status": "PASS"' experiments/a2_v1/CUSTODY_CONSOLIDATION_VERIFICATION.json
+          ! git ls-files | grep -E '(^|/)(__pycache__/|.*\.py[co]$)'
+          git diff --exit-code 52023fe84c5c706c0b8b7c18d61936ec99070b65 -- \
+            formalization/ \
+            experiments/A2_PREREG_V0.md \
+            experiments/A2_PREREG_V1.md \
+            experiments/a2_v0/ \
+            experiments/a2_v1/implementation/a2_v1/
+          test -z "$(git status --porcelain)"
