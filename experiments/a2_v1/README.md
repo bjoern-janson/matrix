@@ -79,6 +79,16 @@ L_common_K 0
 
 These are finite-assay results under the frozen claim ceiling, not a general adaptation or corrigibility law. `MATRIX_1` remains **NOT EARNED**.
 
+### 6. Post-execution derived analysis
+
+- [`analysis/NONEXACT_EXPANSION_V0.md`](analysis/NONEXACT_EXPANSION_V0.md) — expansion without exact recovery: exact geometry, final-survivor certificates, witnesses and claim ceiling.
+- [`analysis/NONEXACT_EXPANSION_CENSUS.json`](analysis/NONEXACT_EXPANSION_CENSUS.json) — stratified census.
+- [`analysis/NONEXACT_EXPANSION_UNITS.json.gz`](analysis/NONEXACT_EXPANSION_UNITS.json.gz) — all 9,216 derived rows.
+- [`analysis/mine_nonexact_expansion.py`](analysis/mine_nonexact_expansion.py) — standalone sealed-record analysis with no learner imports or executions.
+- [`analysis/NONEXACT_EXPANSION_CUSTODY.json`](analysis/NONEXACT_EXPANSION_CUSTODY.json) — input and output identities.
+
+This stage is **POST-EXECUTION / DERIVED / NON-PREREGISTERED**. It adds no prospective execution and changes no preregistered endpoint.
+
 ## Historical-state rule
 
 Files are not rewritten merely because the program advanced. In particular, preregistration-stage and validation-only files can correctly say `NOT_RUN` or zero prospective executions. **Current** A2-V1 standing is defined by this index, [`STATUS.json`](STATUS.json), [`CURRENT_STATE.md`](CURRENT_STATE.md), [`../A2_V1_RESULT.md`](../A2_V1_RESULT.md), and [`EXECUTION_CUSTODY.md`](EXECUTION_CUSTODY.md).

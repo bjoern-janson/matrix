@@ -68,6 +68,14 @@ The subsequent [`../../formalization/GL_MATRIX_TRANSLATION_V0.md`](../../formali
 
 The construction explicitly assigns zero realization cost and uses a one-shot vector query; its resource contract differs from A2's coordinate queries. It establishes no temporal/learning result, informed inverse-selection procedure, human-control result, or general corrigibility claim. These are derived semantic results, not additional A2-V1 observations or empirical validation of MATRIX_0.
 
+## Derived analysis: expansion without exact recovery
+
+The post-execution [non-exact expansion record](analysis/NONEXACT_EXPANSION_V0.md) mines the sealed V0/V1 trajectories without rerunning either learner. It reproduces V0's 52 non-exact expansions and identifies 1,276 in V1's already-executed prospective stratum.
+
+Of those 1,276, 580 imply strict expansion under every retained candidate operator; another 60 guarantee a particular gain while still permitting loss under a surviving candidate. The record proves a sufficient positive-feedback/complement condition for a shared two-state gain. These are conditional analyst-computed certificates; the learner does not compute or deploy them.
+
+This analysis is **POST-EXECUTION / DERIVED / NON-PREREGISTERED**. It also distinguishes selecting the true hypothesis from a singleton survivor set. Its census, all 9,216 derived rows, standalone script and source bindings are linked from the record.
+
 **No next assay is frozen by this record.** The next concrete missing argument must be chosen explicitly before any new experiment is designed. Neither GL record authorizes an affine assay or any other follow-up.
 
 `MATRIX_1` remains **NOT EARNED**.

@@ -1,0 +1,294 @@
+{
+  "learner_runs": 0,
+  "noncontrol_combined": {
+    "classes": {
+      "CONTRACTION": 552,
+      "EXPANSION": 5884,
+      "NULL": 924,
+      "TRADEOFF": 320
+    },
+    "exact_selected": 4504,
+    "exact_selected_with_nonsingleton_live": 520,
+    "nonexact_all_live_worlds_no_loss": 688,
+    "nonexact_all_live_worlds_strict_expansion": 648,
+    "nonexact_certain_equals_actual": 456,
+    "nonexact_certain_sizes": {
+      "0": 668,
+      "2": 448,
+      "4": 264
+    },
+    "nonexact_certain_stronger_than_positive_affine_closure": 112,
+    "nonexact_common_gain_nonempty": 712,
+    "nonexact_expansions": 1380,
+    "nonexact_geometry": {
+      "(0, 2)": 444,
+      "(0, 4)": 724,
+      "(2, 4)": 212
+    },
+    "nonexact_has_live_world_loss": 692,
+    "nonexact_joint_certification": {
+      "(False, False, False)": 628,
+      "(False, False, True)": 64,
+      "(False, True, False)": 40,
+      "(True, True, True)": 648
+    },
+    "nonexact_live_sizes": {
+      "14": 264,
+      "16": 180,
+      "18": 80,
+      "2": 280,
+      "3": 128,
+      "4": 224,
+      "6": 80,
+      "8": 144
+    },
+    "nonexact_positive_episodes": {
+      "0": 668,
+      "1": 472,
+      "2": 136,
+      "3": 80,
+      "4": 24
+    },
+    "nonexact_with_nonidentity_correct": 712,
+    "singleton_live": 3984,
+    "units": 7680
+  },
+  "source_commit": "c2b99a917b6d7ca54a4eea8f22e59646fd23fbb9",
+  "standing": "POST_EXECUTION_DERIVED_NON_PREREGISTERED",
+  "v0": {
+    "classes": {
+      "CONTRACTION": 18,
+      "EXPANSION": 254,
+      "NULL": 32,
+      "TRADEOFF": 16
+    },
+    "exact_selected": 202,
+    "exact_selected_with_nonsingleton_live": 18,
+    "nonexact_all_live_worlds_no_loss": 36,
+    "nonexact_all_live_worlds_strict_expansion": 34,
+    "nonexact_certain_equals_actual": 28,
+    "nonexact_certain_sizes": {
+      "0": 16,
+      "2": 20,
+      "4": 16
+    },
+    "nonexact_certain_stronger_than_positive_affine_closure": 10,
+    "nonexact_common_gain_nonempty": 36,
+    "nonexact_expansions": 52,
+    "nonexact_geometry": {
+      "(0, 2)": 18,
+      "(0, 4)": 27,
+      "(2, 4)": 7
+    },
+    "nonexact_has_live_world_loss": 16,
+    "nonexact_joint_certification": {
+      "(False, False, False)": 14,
+      "(False, False, True)": 2,
+      "(False, True, False)": 2,
+      "(True, True, True)": 34
+    },
+    "nonexact_live_sizes": {
+      "14": 6,
+      "16": 2,
+      "2": 20,
+      "3": 6,
+      "4": 8,
+      "6": 2,
+      "8": 8
+    },
+    "nonexact_positive_episodes": {
+      "0": 16,
+      "1": 28,
+      "2": 2,
+      "3": 4,
+      "4": 2
+    },
+    "nonexact_with_nonidentity_correct": 36,
+    "singleton_live": 184,
+    "units": 320
+  },
+  "v1": {
+    "COVARIANCE_P3": {
+      "classes": {
+        "CONTRACTION": 18,
+        "EXPANSION": 254,
+        "NULL": 32,
+        "TRADEOFF": 16
+      },
+      "exact_selected": 202,
+      "exact_selected_with_nonsingleton_live": 18,
+      "nonexact_all_live_worlds_no_loss": 36,
+      "nonexact_all_live_worlds_strict_expansion": 34,
+      "nonexact_certain_equals_actual": 28,
+      "nonexact_certain_sizes": {
+        "0": 16,
+        "2": 20,
+        "4": 16
+      },
+      "nonexact_certain_stronger_than_positive_affine_closure": 10,
+      "nonexact_common_gain_nonempty": 36,
+      "nonexact_expansions": 52,
+      "nonexact_geometry": {
+        "(0, 2)": 18,
+        "(0, 4)": 27,
+        "(2, 4)": 7
+      },
+      "nonexact_has_live_world_loss": 16,
+      "nonexact_joint_certification": {
+        "(False, False, False)": 14,
+        "(False, False, True)": 2,
+        "(False, True, False)": 2,
+        "(True, True, True)": 34
+      },
+      "nonexact_live_sizes": {
+        "14": 6,
+        "16": 2,
+        "2": 20,
+        "3": 6,
+        "4": 8,
+        "6": 2,
+        "8": 8
+      },
+      "nonexact_positive_episodes": {
+        "0": 16,
+        "1": 28,
+        "2": 2,
+        "3": 4,
+        "4": 2
+      },
+      "nonexact_with_nonidentity_correct": 36,
+      "singleton_live": 184,
+      "units": 320
+    },
+    "HISTORICAL_P0": {
+      "classes": {
+        "CONTRACTION": 18,
+        "EXPANSION": 254,
+        "NULL": 32,
+        "TRADEOFF": 16
+      },
+      "exact_selected": 202,
+      "exact_selected_with_nonsingleton_live": 18,
+      "nonexact_all_live_worlds_no_loss": 36,
+      "nonexact_all_live_worlds_strict_expansion": 34,
+      "nonexact_certain_equals_actual": 28,
+      "nonexact_certain_sizes": {
+        "0": 16,
+        "2": 20,
+        "4": 16
+      },
+      "nonexact_certain_stronger_than_positive_affine_closure": 10,
+      "nonexact_common_gain_nonempty": 36,
+      "nonexact_expansions": 52,
+      "nonexact_geometry": {
+        "(0, 2)": 18,
+        "(0, 4)": 27,
+        "(2, 4)": 7
+      },
+      "nonexact_has_live_world_loss": 16,
+      "nonexact_joint_certification": {
+        "(False, False, False)": 14,
+        "(False, False, True)": 2,
+        "(False, True, False)": 2,
+        "(True, True, True)": 34
+      },
+      "nonexact_live_sizes": {
+        "14": 6,
+        "16": 2,
+        "2": 20,
+        "3": 6,
+        "4": 8,
+        "6": 2,
+        "8": 8
+      },
+      "nonexact_positive_episodes": {
+        "0": 16,
+        "1": 28,
+        "2": 2,
+        "3": 4,
+        "4": 2
+      },
+      "nonexact_with_nonidentity_correct": 36,
+      "singleton_live": 184,
+      "units": 320
+    },
+    "PROSPECTIVE_TARGET": {
+      "classes": {
+        "CONTRACTION": 516,
+        "EXPANSION": 5376,
+        "NULL": 860,
+        "TRADEOFF": 288
+      },
+      "exact_selected": 4100,
+      "exact_selected_with_nonsingleton_live": 484,
+      "nonexact_all_live_worlds_no_loss": 616,
+      "nonexact_all_live_worlds_strict_expansion": 580,
+      "nonexact_certain_equals_actual": 400,
+      "nonexact_certain_sizes": {
+        "0": 636,
+        "2": 408,
+        "4": 232
+      },
+      "nonexact_certain_stronger_than_positive_affine_closure": 92,
+      "nonexact_common_gain_nonempty": 640,
+      "nonexact_expansions": 1276,
+      "nonexact_geometry": {
+        "(0, 2)": 408,
+        "(0, 4)": 670,
+        "(2, 4)": 198
+      },
+      "nonexact_has_live_world_loss": 660,
+      "nonexact_joint_certification": {
+        "(False, False, False)": 600,
+        "(False, False, True)": 60,
+        "(False, True, False)": 36,
+        "(True, True, True)": 580
+      },
+      "nonexact_live_sizes": {
+        "14": 252,
+        "16": 176,
+        "18": 80,
+        "2": 240,
+        "3": 116,
+        "4": 208,
+        "6": 76,
+        "8": 128
+      },
+      "nonexact_positive_episodes": {
+        "0": 636,
+        "1": 416,
+        "2": 132,
+        "3": 72,
+        "4": 20
+      },
+      "nonexact_with_nonidentity_correct": 640,
+      "singleton_live": 3616,
+      "units": 7040
+    },
+    "THEOREM_CONTROL": {
+      "classes": {
+        "EXPANSION": 1344,
+        "NULL": 192
+      },
+      "exact_selected": 1536,
+      "exact_selected_with_nonsingleton_live": 320,
+      "nonexact_all_live_worlds_no_loss": 0,
+      "nonexact_all_live_worlds_strict_expansion": 0,
+      "nonexact_certain_equals_actual": 0,
+      "nonexact_certain_sizes": {},
+      "nonexact_certain_stronger_than_positive_affine_closure": 0,
+      "nonexact_common_gain_nonempty": 0,
+      "nonexact_expansions": 0,
+      "nonexact_geometry": {},
+      "nonexact_has_live_world_loss": 0,
+      "nonexact_joint_certification": {},
+      "nonexact_live_sizes": {},
+      "nonexact_positive_episodes": {},
+      "nonexact_with_nonidentity_correct": 0,
+      "singleton_live": 1216,
+      "units": 1536
+    }
+  },
+  "v1_evidence_sha256": "6e3188b33a2640133cbdd4b9d91b48513cbd2dfc80c96c21efb561932961c1d1",
+  "v1_primary_sha256": "f1b0f55c0860e9847f69ef4a741f477a66dd5cc7f8d9ed4af35484066e223076"
+}
