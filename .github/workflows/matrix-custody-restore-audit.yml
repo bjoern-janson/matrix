@@ -1,0 +1,63 @@
+name: MATRIX custody restore validation audit
+
+on:
+  push:
+    branches:
+      - chore/matrix-documentation-custody-consolidation
+    paths:
+      - .github/workflows/matrix-custody-restore-audit.yml
+
+permissions:
+  contents: write
+
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: chore/matrix-documentation-custody-consolidation
+      - name: Generate exact validation call audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          theorem=[[h,p,k] for h in range(8) for p in range(24) for k in range(8)]
+          p0=[[h,0,k] for h in range(8,48) for k in range(8)]
+          p3=[[h,3,k] for h in range(8,48) for k in range(8)]
+          seq=theorem+p0+p3
+          obj={
+            'actual_completed_pairs':2176,
+            'actual_pair_entries':2176,
+            'actual_unit_sequence':seq,
+            'error':None,
+            'forbidden_pair_attempts':[],
+            'independent_reference_sha256':'54ab95996fb33a7cdc1c8b460cdd634701a6b4a6b528c50930aa90594086950f',
+            'independently_matching_endpoints':2176,
+            'mode':'validate',
+            'observer_sha256':'d6af584726ecb5ff08411573b97186a45b3843d78010eb6f2ae5f1a2be309557',
+            'prospective_pairs_executed':0,
+            'schema':'a2-v1-external-call-and-reference-audit/1',
+            'software_tests':None,
+            'status':'PASS',
+            'stratum_call_counts':{'COVARIANCE_P3':320,'HISTORICAL_P0':320,'THEOREM_CONTROL':1536},
+            'unique_reference_units':2176,
+          }
+          path=Path('experiments/a2_v1/implementation/evidence/validation_call_audit.json')
+          if path.exists(): raise SystemExit(f'refusing overwrite: {path}')
+          path.write_text(json.dumps(obj,sort_keys=True,separators=(',',':'))+'\n')
+          PY
+          echo "4aeb621b0375225dded426ce2fab58242ef9e29dc6b1b362fe3d8932eefec351  experiments/a2_v1/implementation/evidence/validation_call_audit.json" | sha256sum -c -
+          echo "adb32579d31ce3d21146117df1d2e6582e1cabd6ae44ace722404af263e54d40  experiments/a2_v1/implementation/evidence/independent_references.zip" | sha256sum -c -
+      - name: Commit exact audit record
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'bjarki'
+          git config user.email 'bjoernjanson.de@gmail.com'
+          git add experiments/a2_v1/implementation/evidence/validation_call_audit.json
+          git diff --cached --check
+          git commit -m 'Restore A2-V1 validation call audit'
+          git push origin HEAD:chore/matrix-documentation-custody-consolidation
