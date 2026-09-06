@@ -1,0 +1,109 @@
+{
+  "schema": "matrix-a2-v0-post-execution-structure/1",
+  "status": "POST_EXECUTION_DERIVED_ANALYSIS",
+  "repo_source_commit": "67232842a213fa33f5a8568baa772c82c2b032af",
+  "scientific_run_zip_sha256": "cb9e444d1264b68013ead4c895fc5717b70bd310d6523cd6f091460c748021ff",
+  "source_files_sha256": {
+    "primary.json": "3ee83c7c50b9085cd990c09f57cb8ab784abe854e020c48a3137706fcf90e117",
+    "trajectories.json": "aad6a6782c55f74537d274f78e53668daafddc6834a929ca4efde8018c0795b7",
+    "utilities.json": "5a054c1348080d78d48b7e529bb06dd1a25f5016d16bd17f998ace3189825ea0",
+    "transplants.json": "5529b9e29e42221db4f20e35685d2569c21af237e4959341106f45f1fb1e711c",
+    "report.json": "25792670a091adf14f980f47d4156c6855d7a4e3d65c33eb9802f4805c2dac4e"
+  },
+  "primary_counts": {
+    "EXPANSION": 254,
+    "NULL": 32,
+    "CONTRACTION": 18,
+    "TRADEOFF": 16
+  },
+  "architecture_derived": {
+    "possible_success_set_sizes": [0, 2, 4, 8],
+    "possible_fixed_sets_count": 12,
+    "frontier_cardinality": {"0": 9, "2": 10, "4": 20, "8": 256},
+    "baseline_true_transformations": {"EMPTY": 26, "LINE2": 8, "PLANE4": 6},
+    "baseline_units": {"EMPTY": 208, "LINE2": 64, "PLANE4": 48},
+    "failure_count_equals_active_changes": true,
+    "correct_training_states_subset_final_success_set": true,
+    "five_or_more_correct_training_states_force_exact_identification": true
+  },
+  "transition_census": [
+    {"from":"EMPTY","to":"EMPTY","relation":"equal","classification":"NULL","count":32,"delta_plus":0,"delta_minus":0},
+    {"from":"EMPTY","to":"LINE2","relation":"proper_subset","classification":"EXPANSION","count":18,"delta_plus":1,"delta_minus":0},
+    {"from":"EMPTY","to":"PLANE4","relation":"proper_subset","classification":"EXPANSION","count":27,"delta_plus":11,"delta_minus":0},
+    {"from":"EMPTY","to":"FULL8","relation":"proper_subset","classification":"EXPANSION","count":131,"delta_plus":247,"delta_minus":0},
+    {"from":"LINE2","to":"EMPTY","relation":"proper_superset","classification":"CONTRACTION","count":11,"delta_plus":0,"delta_minus":1},
+    {"from":"LINE2","to":"LINE2","relation":"incomparable_distinct","classification":"TRADEOFF","count":2,"delta_plus":1,"delta_minus":1},
+    {"from":"LINE2","to":"PLANE4","relation":"contained","classification":"EXPANSION","count":7,"delta_plus":10,"delta_minus":0},
+    {"from":"LINE2","to":"PLANE4","relation":"disjoint","classification":"TRADEOFF","count":6,"delta_plus":11,"delta_minus":1},
+    {"from":"LINE2","to":"FULL8","relation":"proper_subset","classification":"EXPANSION","count":38,"delta_plus":246,"delta_minus":0},
+    {"from":"PLANE4","to":"EMPTY","relation":"proper_superset","classification":"CONTRACTION","count":5,"delta_plus":0,"delta_minus":11},
+    {"from":"PLANE4","to":"LINE2","relation":"contained_line","classification":"CONTRACTION","count":2,"delta_plus":0,"delta_minus":10},
+    {"from":"PLANE4","to":"PLANE4","relation":"distinct_intersection_LINE2","classification":"TRADEOFF","count":4,"delta_plus":10,"delta_minus":10},
+    {"from":"PLANE4","to":"PLANE4","relation":"distinct_disjoint","classification":"TRADEOFF","count":4,"delta_plus":11,"delta_minus":11},
+    {"from":"PLANE4","to":"FULL8","relation":"proper_subset","classification":"EXPANSION","count":33,"delta_plus":236,"delta_minus":0}
+  ],
+  "identification": {
+    "exact": 202,
+    "nonexact": 118,
+    "nonexact_expansion": 52,
+    "nonexact_expansion_breakdown": {
+      "EMPTY_to_LINE2": 18,
+      "EMPTY_to_PLANE4": 27,
+      "LINE2_to_containing_PLANE4": 7
+    }
+  },
+  "loss_structure": {
+    "baseline_nontrivial_units": 112,
+    "loss_bearing_units": 34,
+    "line_baseline": {"units":64,"expansion":45,"contraction":11,"tradeoff":8,"loss_bearing":19},
+    "plane_baseline": {"units":48,"expansion":33,"contraction":7,"tradeoff":8,"loss_bearing":15}
+  },
+  "scalarization": {
+    "tradeoff_units": 16,
+    "tradeoffs_equal_frontier_cardinality": 10,
+    "tradeoffs_increased_frontier_cardinality": 6,
+    "statement": "Frontier cardinality alone misses all 16 tradeoffs: 10 are cardinality-equal and 6 increase cardinality while losing previously correctable sets."
+  },
+  "trajectory_census": {
+    "feedback_changed_active_hypothesis": 320,
+    "feedback_shrank_version_set": 320,
+    "frontier_changed": 288,
+    "first_feedback_correct_units": 40,
+    "first_feedback_correct_exact_identification": 40,
+    "first_feedback_correct_singleton_final_version_set": 40,
+    "zero_correct_training_predictions": 72,
+    "zero_correct_but_exact_identification": 6,
+    "zero_correct_outcomes": {"EXPANSION":22,"NULL":32,"CONTRACTION":18,"TRADEOFF":0},
+    "tradeoff_correct_prediction_counts": {"1":4,"2":12}
+  },
+  "order_sensitivity": {
+    "true_transformations": 40,
+    "multiple_outcome_classes_across_rotations": 35,
+    "order_invariant_all_expansion": 5,
+    "expansion_null_order_sensitive": 22,
+    "expansion_loss_order_sensitive": 13,
+    "baseline_nontrivial_true_transformations": 14,
+    "baseline_nontrivial_with_some_loss_rotation": 13,
+    "witness_hypothesis_22": {
+      "sigma": [1,0,2],
+      "mask": [1,1,0],
+      "baseline_success_set": [2,3,4,5],
+      "rotations": {
+        "0":{"class":"TRADEOFF","active":6,"A1":[0,1,6,7]},
+        "1":{"class":"TRADEOFF","active":6,"A1":[0,1,6,7]},
+        "2":{"class":"EXPANSION","active":22,"A1":[0,1,2,3,4,5,6,7]},
+        "3":{"class":"EXPANSION","active":22,"A1":[0,1,2,3,4,5,6,7]},
+        "4":{"class":"EXPANSION","active":22,"A1":[0,1,2,3,4,5,6,7]},
+        "5":{"class":"EXPANSION","active":22,"A1":[0,1,2,3,4,5,6,7]},
+        "6":{"class":"CONTRACTION","active":18,"A1":[]},
+        "7":{"class":"CONTRACTION","active":10,"A1":[]}
+      }
+    }
+  },
+  "symmetry_breaking": {
+    "three_cycle_block_120": {"units":32,"expansion":21,"contraction":11,"tradeoff":0},
+    "three_cycle_block_201": {"units":32,"expansion":24,"contraction":0,"tradeoff":8},
+    "interpretation": "Observed class frequencies reflect signed-permutation geometry plus frozen lexicographic elimination plus training order, not an intrinsic group frequency."
+  },
+  "claim_ceiling": "Finite A2-V0 post-execution structural analysis only. No MATRIX1, general corrigibility, universal feedback law, unique mediator, ordering-invariant group claim, future-viability independence, or population extrapolation."
+}
