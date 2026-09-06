@@ -62,6 +62,8 @@ Their `NOT_RUN` / zero-prospective language is historically correct for those st
 
 A2-V1 closes the specific A2-V0 seam it preregistered: separation of cyclic encounter-order effects from active-survivor-priority effects within the tested family, including their interaction.
 
-**No next assay is frozen by this record.** The next concrete missing argument must be chosen explicitly before any new experiment is designed. This document does not invent a new concept, silently promote MATRIX, or manufacture a follow-up merely to keep the program moving.
+A post-A2-V1 candidate mathematical substrate is recorded at [`../../formalization/GL_FIXED_SPACE_SEPARATION_V0.md`](../../formalization/GL_FIXED_SPACE_SEPARATION_V0.md). Its standing is deliberately split: the finite `GL(d,2)` separation theorem is **EARNED**, while the executable MATRIX translation from fixed-space geometry to a system-relative corrective-frontier difference is **UNEARNED**.
+
+**No next assay is frozen by this record.** The next concrete missing argument must be chosen explicitly before any new experiment is designed. The GL record does not authorize an affine assay or any other follow-up. This document does not invent a new concept, silently promote MATRIX, or manufacture a follow-up merely to keep the program moving.
 
 `MATRIX_1` remains **NOT EARNED**.
