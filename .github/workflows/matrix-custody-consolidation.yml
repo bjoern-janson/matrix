@@ -1,0 +1,113 @@
+name: MATRIX custody consolidation archive
+
+on:
+  push:
+    branches:
+      - chore/matrix-documentation-custody-consolidation
+    paths:
+      - .github/workflows/matrix-custody-consolidation.yml
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout consolidation branch
+        uses: actions/checkout@v4
+        with:
+          ref: chore/matrix-documentation-custody-consolidation
+
+      - name: Download exact successful Actions artifact
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh api /repos/bjoern-janson/matrix/actions/artifacts/9992901892/zip > /tmp/a2-v1-prospective-34045071131.zip
+          echo "17fbf854084a023c8d15a55e185bbe8e31d68d2087ebe05da7fa2c2fae68f11e  /tmp/a2-v1-prospective-34045071131.zip" | sha256sum -c -
+          rm -rf /tmp/a2v1-artifact /tmp/a2v1-run
+          mkdir -p /tmp/a2v1-artifact /tmp/a2v1-run
+          unzip -q /tmp/a2-v1-prospective-34045071131.zip -d /tmp/a2v1-artifact
+          echo "d1f7605ac4246cd872984a1a3efaead468a9cea242d5fd88642969af1344bfa7  /tmp/a2v1-artifact/a2-v1-prospective-output.tar.gz" | sha256sum -c -
+          tar -xzf /tmp/a2v1-artifact/a2-v1-prospective-output.tar.gz -C /tmp/a2v1-run
+
+      - name: Verify exact scientific output
+        shell: bash
+        run: |
+          set -euo pipefail
+          O=/tmp/a2v1-run/a2-v1-prospective-output
+          echo "f1b0f55c0860e9847f69ef4a741f477a66dd5cc7f8d9ed4af35484066e223076  $O/primary.json" | sha256sum -c -
+          echo "7b298eef81996ab804c09c5a4d8756d7fbd8842843bcef7a30b9de160f64e10b  $O/derived.json" | sha256sum -c -
+          echo "6e3188b33a2640133cbdd4b9d91b48513cbd2dfc80c96c21efb561932961c1d1  $O/evidence.json" | sha256sum -c -
+          echo "a17e509feeeac0f61499acfe81d50be149f183c05739879be6d77bd56a18a117  $O/validation/evidence.json" | sha256sum -c -
+          echo "31e187d876fa1aa2952fb78e6e6e93399b784bdfbc460b09d3d0b3f7a9a37194  $O/expected_references.json" | sha256sum -c -
+          echo "0b047d5e8fac7299e6b04a4497ccfb394cd7137f52dd9d2ec5fd67944dc50873  $O/preparation.json" | sha256sum -c -
+          echo "ea204bad2519f6759f6e5ef1dadd405b7043fe8277e6b5ebbfa3cace09c1c31c  $O/source_manifest.json" | sha256sum -c -
+          echo "33372d26cce332daa4b997b1106955ee000605025cf412503dcfa29a362537a3  $O/unit_manifest.json" | sha256sum -c -
+
+      - name: Materialize repository custody artifacts
+        shell: bash
+        run: |
+          set -euo pipefail
+          O=/tmp/a2v1-run/a2-v1-prospective-output
+          mkdir -p experiments/a2_v1/execution/artifacts experiments/a2_v1/execution/logs experiments/a2_v1/result
+          cp /tmp/a2v1-artifact/a2-v1-prospective-output.tar.gz experiments/a2_v1/execution/artifacts/
+          cp /tmp/a2v1-artifact/a2-v1-prospective-output.tar.gz.sha256 experiments/a2_v1/execution/artifacts/
+          gzip -n -9 -c "$O/primary.json" > experiments/a2_v1/result/primary.json.gz
+          echo "a317bf081407694cefe2e84b97bfdbd845eef1077a7b92c6328785b565c6e8b3  experiments/a2_v1/result/primary.json.gz" | sha256sum -c -
+          gzip -dc experiments/a2_v1/result/primary.json.gz | sha256sum | grep -q '^f1b0f55c0860e9847f69ef4a741f477a66dd5cc7f8d9ed4af35484066e223076 '
+          cp "$O/derived.json" experiments/a2_v1/result/derived.json
+          echo "7b298eef81996ab804c09c5a4d8756d7fbd8842843bcef7a30b9de160f64e10b  experiments/a2_v1/result/derived.json" | sha256sum -c -
+          cp /tmp/a2v1-run/run-logs/* experiments/a2_v1/execution/logs/
+
+      - name: Reconstruct exact validation archive wrapper
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import zipfile
+          out=Path('experiments/a2_v1/implementation/evidence/validation_run.zip')
+          if out.exists():
+              raise SystemExit(f'refusing to overwrite {out}')
+          run=Path('/tmp/a2v1-run/a2-v1-prospective-output')
+          source={
+              'evidence.json': run/'validation/evidence.json',
+              'expected_references.json': run/'expected_references.json',
+              'preparation.json': run/'preparation.json',
+              'receipt.json': Path('experiments/a2_v1/implementation/evidence/validation_receipt.json'),
+              'source_manifest.json': run/'source_manifest.json',
+              'unit_manifest.json': run/'unit_manifest.json',
+          }
+          times={
+              'evidence.json': (2026,9,6,18,15,32),
+              'expected_references.json': (2026,9,6,18,14,28),
+              'preparation.json': (2026,9,6,18,14,28),
+              'receipt.json': (2026,9,6,18,15,32),
+              'source_manifest.json': (2026,9,6,18,14,28),
+              'unit_manifest.json': (2026,9,6,18,14,28),
+          }
+          with zipfile.ZipFile(out,'w',compression=zipfile.ZIP_DEFLATED,compresslevel=9,strict_timestamps=True) as z:
+              for name in ['evidence.json','expected_references.json','preparation.json','receipt.json','source_manifest.json','unit_manifest.json']:
+                  info=zipfile.ZipInfo(name,date_time=times[name])
+                  info.compress_type=zipfile.ZIP_DEFLATED
+                  info.create_system=3
+                  info.external_attr=0o100644 << 16
+                  z.writestr(info,source[name].read_bytes(),compress_type=zipfile.ZIP_DEFLATED,compresslevel=9)
+          PY
+          echo "b397aba50af26e03946d18492c3580cc5acf5554fec347c3b22f72a907afc643  experiments/a2_v1/implementation/evidence/validation_run.zip" | sha256sum -c -
+
+      - name: Commit custody archive
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'bjarki'
+          git config user.email 'bjoernjanson.de@gmail.com'
+          git add experiments/a2_v1/implementation/evidence/validation_run.zip experiments/a2_v1/execution experiments/a2_v1/result/primary.json.gz experiments/a2_v1/result/derived.json
+          git diff --cached --check
+          git commit -m 'Archive A2-V1 scientific execution bytes'
+          git push origin HEAD:chore/matrix-documentation-custody-consolidation
