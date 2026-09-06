@@ -1,0 +1,43 @@
+{
+  "schema": "matrix-a2-v1-status/1",
+  "program": "MATRIX0",
+  "protocol_id": "A2-PREREG-V1",
+  "preregistration": "FROZEN",
+  "repository_parent_before_freeze": "1a73502759a308f99d09de88aca67f0dfdcfd412",
+  "mathematical_audit": {
+    "status": "COMPLETE",
+    "historical_check_groups_passed": 16,
+    "distinct_priorities": 24,
+    "documentation_erratum": "CORRECTED_TRANSLATION_BLOCK_ORDER_ONLY"
+  },
+  "implementation": {
+    "status": "NOT_IMPLEMENTED"
+  },
+  "validation": {
+    "status": "NOT_EXECUTED",
+    "theorem_pairs_executed": 0,
+    "historical_p0_pairs_executed": 0,
+    "covariance_p3_pairs_executed": 0,
+    "required_reference_pairs": 2176
+  },
+  "scientific_execution": {
+    "status": "NOT_EXECUTED",
+    "prospective_pairs_executed": 0,
+    "prospective_pair_count": 7040,
+    "all_targets_certified_analytically_unresolved": false
+  },
+  "grid": {
+    "total_paired_cells": 9216,
+    "theorem_controls": 1536,
+    "historical_p0": 320,
+    "covariance_p3": 320,
+    "prospective_targets": 7040
+  },
+  "endpoint": "SET_VALUED_GAMMA_MAP",
+  "weighted_endpoint": "NONE",
+  "v1_scientific_result": "NONE",
+  "matrix1": "NOT_EARNED",
+  "kernel_revision": "NONE",
+  "v0_artifact_revision": "NONE",
+  "next_authorized_by_this_commit": "NONE_BEYOND_PREREGISTRATION_ARCHIVE"
+}
