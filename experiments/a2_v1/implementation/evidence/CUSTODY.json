@@ -1,0 +1,47 @@
+{
+  "artifacts": {
+    "FINAL_REVIEW.md": "9594e0107de2053fbcc971b16a806422f7a130dd6445e21717151fb72a07eb2e",
+    "IMPLEMENTATION_REPORT.md": "a23d50d669022243d7809b838d3aa909b66739ebf9e07e4d9428bc7162132c20",
+    "INITIAL_REVIEW.md": "689ce1169fcadc5e0ebf19b9f2cf6f0de1c3315acd0d473aed3ed7abdb0f7475",
+    "controller_audit.py": "d6af584726ecb5ff08411573b97186a45b3843d78010eb6f2ae5f1a2be309557",
+    "independent_references.zip": "adb32579d31ce3d21146117df1d2e6582e1cabd6ae44ace722404af263e54d40",
+    "software_test_audit.json": "dbefec748d7ea01a1e3e81090e0230ebe8ee3a964b069a91b7212f46f8d1e5c0",
+    "validation_call_audit.json": "4aeb621b0375225dded426ce2fab58242ef9e29dc6b1b362fe3d8932eefec351",
+    "validation_receipt.json": "ad0996b8fc0f01de502acd963626a35053516b3a3b95d4a2f98937109af51a8e",
+    "validation_run.zip": "b397aba50af26e03946d18492c3580cc5acf5554fec347c3b22f72a907afc643"
+  },
+  "frozen_base_commit": "374c58a4b21118a89173d1412d8b4b9e1f0a1dd6",
+  "invariant_assertions_passed": 949632,
+  "paired_reference_checks_passed": 2176,
+  "prospective_pairs_executed": 0,
+  "raw_validation_files": {
+    "evidence.json": {
+      "bytes": 139751871,
+      "sha256": "a17e509feeeac0f61499acfe81d50be149f183c05739879be6d77bd56a18a117"
+    },
+    "expected_references.json": {
+      "bytes": 4019144,
+      "sha256": "31e187d876fa1aa2952fb78e6e6e93399b784bdfbc460b09d3d0b3f7a9a37194"
+    },
+    "preparation.json": {
+      "bytes": 983,
+      "sha256": "0b047d5e8fac7299e6b04a4497ccfb394cd7137f52dd9d2ec5fd67944dc50873"
+    },
+    "receipt.json": {
+      "bytes": 1079,
+      "sha256": "ad0996b8fc0f01de502acd963626a35053516b3a3b95d4a2f98937109af51a8e"
+    },
+    "source_manifest.json": {
+      "bytes": 1900,
+      "sha256": "ea204bad2519f6759f6e5ef1dadd405b7043fe8277e6b5ebbfa3cace09c1c31c"
+    },
+    "unit_manifest.json": {
+      "bytes": 86481,
+      "sha256": "33372d26cce332daa4b997b1106955ee000605025cf412503dcfa29a362537a3"
+    }
+  },
+  "reviewed_source_commit": "929d384972f9bffd12a8380c8204600d3a393941",
+  "schema": "a2-v1-validation-custody/1",
+  "source_digest": "ea204bad2519f6759f6e5ef1dadd405b7043fe8277e6b5ebbfa3cace09c1c31c",
+  "standing": "VALIDATION_ONLY_NO_SCIENTIFIC_RESULT"
+}
