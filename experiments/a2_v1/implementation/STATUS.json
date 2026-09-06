@@ -1,0 +1,14 @@
+{
+  "custody": "evidence/CUSTODY.json",
+  "implementation": "IMPLEMENTED_AND_REVIEWED",
+  "prospective_pairs_executed": 0,
+  "prospective_pairs_remaining": 7040,
+  "receipt": "evidence/validation_receipt.json",
+  "reference_pairs_matched": 2176,
+  "reviewed_source_commit": "929d384972f9bffd12a8380c8204600d3a393941",
+  "scientific_result": "NOT_RUN",
+  "software_tests_passed": 30,
+  "source_digest": "ea204bad2519f6759f6e5ef1dadd405b7043fe8277e6b5ebbfa3cace09c1c31c",
+  "stop_boundary": "VALIDATION_ONLY_COMPLETE",
+  "validation": "PASS"
+}
