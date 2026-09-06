@@ -1,0 +1,105 @@
+name: A2-V1 prospective assay
+
+on:
+  push:
+    branches:
+      - science/a2-v1-prospective-20260906
+    paths:
+      - .github/workflows/a2-v1-prospective.yml
+
+permissions:
+  contents: read
+
+jobs:
+  run-a2-v1:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - name: Checkout canonical MATRIX state
+        uses: actions/checkout@v4
+        with:
+          ref: 2b79c73dd9ac46fd6f693fd35d63c44cbb396a40
+
+      - name: Set up Python 3.12.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.13'
+
+      - name: Verify canonical checkout
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "2b79c73dd9ac46fd6f693fd35d63c44cbb396a40"
+          test -z "$(git status --porcelain)"
+          python3 --version
+
+      - name: Configure execution swap
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo swapoff -a || true
+          sudo fallocate -l 6G /swapfile
+          sudo chmod 600 /swapfile
+          sudo mkswap /swapfile
+          sudo swapon /swapfile
+          free -h
+
+      - name: Run frozen software test suite
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$GITHUB_WORKSPACE/run-logs"
+          cd experiments/a2_v1/implementation
+          PYTHONPATH=. python3 -m unittest discover -s tests -v 2>&1 | tee "$GITHUB_WORKSPACE/run-logs/tests.log"
+
+      - name: Execute frozen A2-V1 prospective assay once
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd experiments/a2_v1/implementation
+          /usr/bin/time -v env PYTHONPATH=. python3 -m a2_v1 run-prospective \
+            --output "$GITHUB_WORKSPACE/a2-v1-prospective-output" \
+            2>&1 | tee "$GITHUB_WORKSPACE/run-logs/prospective.log"
+
+      - name: Capture execution diagnostics
+        if: always()
+        shell: bash
+        run: |
+          set +e
+          mkdir -p "$GITHUB_WORKSPACE/run-logs"
+          {
+            echo "workflow_sha=$GITHUB_SHA"
+            echo "canonical_checkout=$(git rev-parse HEAD 2>/dev/null)"
+            echo "python=$(python3 --version 2>&1)"
+            echo "date_utc=$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          } > "$GITHUB_WORKSPACE/run-logs/environment.txt"
+          free -h > "$GITHUB_WORKSPACE/run-logs/memory-after.txt" 2>&1
+          df -h > "$GITHUB_WORKSPACE/run-logs/disk-after.txt" 2>&1
+          swapon --show > "$GITHUB_WORKSPACE/run-logs/swap-after.txt" 2>&1
+
+      - name: Seal run output for custody
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd "$GITHUB_WORKSPACE"
+          items=(run-logs)
+          if [ -d a2-v1-prospective-output ]; then
+            items+=(a2-v1-prospective-output)
+          fi
+          tar -czf a2-v1-prospective-output.tar.gz "${items[@]}"
+          sha256sum a2-v1-prospective-output.tar.gz > a2-v1-prospective-output.tar.gz.sha256
+          ls -lh a2-v1-prospective-output.tar.gz
+          cat a2-v1-prospective-output.tar.gz.sha256
+
+      - name: Upload sealed run artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: a2-v1-prospective-${{ github.run_id }}
+          path: |
+            a2-v1-prospective-output.tar.gz
+            a2-v1-prospective-output.tar.gz.sha256
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 90
